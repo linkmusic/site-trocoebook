@@ -164,6 +164,7 @@
     let settings = {};
     let currentCategory = 'todos';
     
+    // --- Funções de Renderização e Lógica ---
     function formatPrice(price) { return new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(price); }
     function loadCart() { const savedCart = localStorage.getItem('trocoEbookCart'); if (savedCart) { cart = JSON.parse(savedCart); updateCart(); } }
     function saveCart() { localStorage.setItem('trocoEbookCart', JSON.stringify(cart)); }
@@ -173,9 +174,15 @@
     function toggleCart() { document.getElementById("cartDropdown").classList.toggle("show"); }
 
     function renderCategories() {
-        const categoriesData = [{ id: 'todos', name: 'Todos' }, ...new Set(products.map(p => p.category))].map(cat => ({id: cat, name: cat.charAt(0).toUpperCase() + cat.slice(1)}));
+        // CORREÇÃO APLICADA AQUI
+        const uniqueCategories = [...new Set(products.map(p => p.category))];
+        const categoryObjects = uniqueCategories.map(cat => ({ id: cat, name: cat.charAt(0).toUpperCase() + cat.slice(1) }));
+        const categoriesData = [{ id: 'todos', name: 'Todos' }, ...categoryObjects];
+
         const container = document.getElementById('categoryTabs');
-        container.innerHTML = categoriesData.map(category => `<div class="category-tab ${category.id === 'todos' ? 'active' : ''}" onclick="filterProducts('${category.id}')">${category.name}</div>`).join('');
+        container.innerHTML = categoriesData.map(category => 
+            `<div class="category-tab ${category.id === 'todos' ? 'active' : ''}" onclick="filterProducts('${category.id}')">${category.name}</div>`
+        ).join('');
     }
 
     function filterProducts(categoryId) {
@@ -308,7 +315,6 @@
     function openTelegram() { if (settings.links && settings.links.support_telegram) window.open(settings.links.support_telegram, "_blank"); }
     function openGroupWhatsApp() { if (settings.links && settings.links.group_whatsapp) window.open(settings.links.group_whatsapp, "_blank"); }
 
-    // --- Inicialização da Página ---
     async function initPage() {
         try {
             const settingsPromise = fetch('/_data/settings.json?v=' + new Date().getTime()).then(res => res.json());
