@@ -1,0 +1,259 @@
+{
+  "items": [
+    {
+      "id": 1,
+      "name": "Curso de Marketing Digital",
+      "icon": "fas fa-bullhorn",
+      "category": "cursos",
+      "description": "Aprenda estratégias comprovadas para alavancar seus negócios online.",
+      "variations": [
+        {
+          "name": "Acesso Completo",
+          "price": 197,
+          "details": "Acesso vitalício | Todos os módulos | Certificado | Grupo VIP",
+          "important": "Inclui atualizações futuras | Suporte prioritário"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Ganhe Dinheiro com CHATGPT",
+      "icon": "fas fa-robot",
+      "category": "cursos",
+      "description": "Aprenda a monetizar usando inteligência artificial no seu dia a dia.",
+      "variations": [
+        {
+          "name": "Acesso Completo",
+          "price": 17.99,
+          "details": "Acesso vitalício | Tutoriais práticos | Exemplos reais",
+          "important": "Atualizações mensais incluídas"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Introduzir Marketing Digital",
+      "icon": "fas fa-ad",
+      "category": "cursos",
+      "description": "Conceitos básicos para iniciantes no marketing digital.",
+      "variations": [
+        {
+          "name": "Acesso Básico",
+          "price": 3.99,
+          "details": "Acesso por 6 meses | Conteúdo introdutório",
+          "important": "Ideal para quem está começando"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "EXCEL BÁSICO",
+      "icon": "fas fa-file-excel",
+      "category": "cursos",
+      "description": "Domine o Excel do zero e aumente sua produtividade.",
+      "variations": [
+        {
+          "name": "Acesso Completo",
+          "price": 13.99,
+          "details": "Acesso vitalício | Exercícios práticos | Modelos prontos",
+          "important": "Inclui certificado de conclusão"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "name": "TRUQUES PARA EDITAR SEUS VÍDEOS",
+      "icon": "fas fa-video",
+      "category": "cursos",
+      "description": "Técnicas profissionais para edição de vídeos com ferramentas gratuitas.",
+      "variations": [
+        {
+          "name": "Acesso Premium",
+          "price": 16.99,
+          "details": "Acesso vitalício | Presets exclusivos | Grupo de suporte",
+          "important": "Compatível com celulares e computadores"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Lucrando com PLR",
+      "icon": "fas fa-money-bill-wave",
+      "category": "cursos",
+      "description": "Estratégias para ganhar dinheiro com produtos de direitos de revenda.",
+      "variations": [
+        {
+          "name": "Acesso Completo",
+          "price": 9.99,
+          "details": "Acesso vitalício | Lista de fornecedores | Modelos de negócio",
+          "important": "Métodos testados e aprovados"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "name": "PYTHON do Básico ao Avançado",
+      "icon": "fas fa-code",
+      "category": "cursos",
+      "description": "Aprenda programação Python desde os fundamentos até projetos complexos.",
+      "variations": [
+        {
+          "name": "Acesso Completo",
+          "price": 19.99,
+          "details": "Acesso vitalício | Projetos práticos | Certificado",
+          "important": "Suporte para dúvidas via comunidade"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "name": "GANHE DINHEIRO COM INTELIGÊNCIA ARTIFICIAL",
+      "icon": "fas fa-brain",
+      "category": "ebooks",
+      "description": "Guia completo para monetizar usando as mais recentes ferramentas de IA.",
+      "variations": [
+        {
+          "name": "Ebook Digital",
+          "price": 3.99,
+          "details": "PDF + ePub | Atualizações gratuitas por 1 ano",
+          "important": "Formato compatível com todos os dispositivos"
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "name": "Árvore | Estratégia INÉDITA Orgânica",
+      "icon": "fas fa-tree",
+      "category": "ebooks",
+      "description": "Método exclusivo para crescimento orgânico em redes sociais.",
+      "variations": [
+        {
+          "name": "Ebook Completo",
+          "price": 7.99,
+          "details": "PDF + Checklist | Exemplos práticos",
+          "important": "Técnicas aplicáveis em qualquer nicho"
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "name": "COMO GANHAR DINHEIRO EM 2025",
+      "icon": "fas fa-calendar",
+      "category": "ebooks",
+      "description": "Tendências e oportunidades para ganhar dinheiro no próximo ano.",
+      "variations": [
+        {
+          "name": "Edição 2025",
+          "price": 3.99,
+          "details": "PDF | Atualizações semestrais",
+          "important": "Baseado em pesquisas de mercado"
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "name": "Descomplicando o Gerenciamento Financeiro",
+      "icon": "fas fa-piggy-bank",
+      "category": "ebooks",
+      "description": "Controle suas finanças pessoais de forma simples e eficiente.",
+      "variations": [
+        {
+          "name": "Ebook + Planilhas",
+          "price": 7.99,
+          "details": "PDF + Modelos editáveis | 100 páginas",
+          "important": "Métodos testados por especialistas"
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "name": "Manutenção do Zero ao Avançado",
+      "icon": "fas fa-tools",
+      "category": "ebooks",
+      "description": "Aprenda a consertar e manter dispositivos eletrônicos como um profissional.",
+      "variations": [
+        {
+          "name": "Edição Completa",
+          "price": 9.99,
+          "details": "PDF ilustrado | Lista de ferramentas essenciais",
+          "important": "Passo a passo com fotos"
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "name": "FAÇA RENDA EXTRA NA INTERNET 2025",
+      "icon": "fas fa-laptop-house",
+      "category": "ebooks",
+      "description": "Mais de 50 formas comprovadas de ganhar dinheiro online.",
+      "variations": [
+        {
+          "name": "Edição Atualizada",
+          "price": 13.99,
+          "details": "PDF | Links para recursos extras",
+          "important": "Métodos para todos os níveis de experiência"
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "name": "GUIA INTELIGÊNCIA EMOCIONAL",
+      "icon": "fas fa-heart",
+      "category": "ebooks",
+      "description": "Desenvolva sua inteligência emocional para melhorar todos os aspectos da vida.",
+      "variations": [
+        {
+          "name": "Ebook Completo",
+          "price": 3.99,
+          "details": "PDF | Exercícios práticos | Testes de autoavaliação",
+          "important": "Baseado em pesquisas científicas"
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "name": "Redação ENEM: Curso PDF + Prompt Corretor",
+      "icon": "fas fa-graduation-cap",
+      "category": "ebooks",
+      "description": "Domine a redação do ENEM com técnicas comprovadas e correção automatizada.",
+      "variations": [
+        {
+          "name": "Pacote Completo",
+          "price": 97.99,
+          "details": "PDF + Ferramentas de correção | Modelos de redação",
+          "important": "Inclui acesso a comunidade de estudos"
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "name": "Controle de estudos com cronômetro",
+      "icon": "fas fa-stopwatch",
+      "category": "planilhas",
+      "description": "Organize seus estudos para Enem, Concursos e Provas com esta planilha inteligente.",
+      "variations": [
+        {
+          "name": "Planilha Editável",
+          "price": 9.99,
+          "details": "Excel + Google Sheets | Tutorial em vídeo",
+          "important": "Compatível com Windows e Mac"
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "name": "Mapas mentais - Pacote Completo",
+      "icon": "fas fa-map",
+      "category": "escolar",
+      "description": "Coleção completa de mapas mentais para estudos escolares e preparação para vestibulares.",
+      "variations": [
+        {
+          "name": "Pacote Completo",
+          "price": 97.99,
+          "details": "100+ mapas mentais | PDF organizado por matérias | Atualizações semestrais",
+          "important": "Material otimizado para impressão e estudo digital"
+        }
+      ]
+    }
+  ]
+}
