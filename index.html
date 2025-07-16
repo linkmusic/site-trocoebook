@@ -129,7 +129,7 @@
       <div id="productsByCategory"></div>
     </div>
     <div id="productDetail" class="hidden">
-      <a class="top-back-link" onclick="goHome()"><i class="fas fa-arrow-left"></i> Voltar para produtos</a>
+      <a class="top-back-link" onclick="goHome(false)"><i class="fas fa-arrow-left"></i> Voltar para produtos</a>
       <div class="product-detail fade-in">
         <h2 id="productName"><i class="fas fa-info-circle"></i> Produto</h2>
         <p id="productDescription">Descrição do produto.</p>
@@ -143,7 +143,7 @@
         </div>
         <button class="btn btn-primary" onclick="addToCart()"><i class="fas fa-cart-plus"></i> Adicionar ao Carrinho</button>
       </div>
-      <a class="back-link" onclick="goHome()"><i class="fas fa-arrow-left"></i> Voltar para produtos</a>
+      <a class="back-link" onclick="goHome(false)"><i class="fas fa-arrow-left"></i> Voltar para produtos</a>
     </div>
   </div>
   <div class="floating-buttons-container">
@@ -170,11 +170,23 @@
     function saveCart() { localStorage.setItem('trocoEbookCart', JSON.stringify(cart)); }
     function changeQuantity(change) { const input = document.getElementById('productQuantity'); let newValue = parseInt(input.value) + change; if (newValue < 1) newValue = 1; input.value = newValue; }
     function showAlert(message, type) { const alert = document.createElement("div"); alert.className = `alert alert-${type}`; alert.textContent = message; document.body.appendChild(alert); setTimeout(() => { alert.style.animation = "fadeOut 0.5s ease"; setTimeout(() => alert.remove(), 500); }, 3000); }
-    function goHome() { document.getElementById("homePage").classList.remove("hidden"); document.getElementById("productDetail").classList.add("hidden"); }
     function toggleCart() { document.getElementById("cartDropdown").classList.toggle("show"); }
 
+    /**
+     * NAVEGAÇÃO: Volta para a página inicial.
+     * @param {boolean} pushState - Se deve ou não adicionar um novo estado ao histórico.
+     * Padrão é true. Usamos false ao navegar pelo histórico do navegador.
+     */
+    function goHome(pushState = true) {
+        document.getElementById("homePage").classList.remove("hidden");
+        document.getElementById("productDetail").classList.add("hidden");
+        selectedProductId = null;
+        if (pushState) {
+            history.pushState({ page: 'home' }, 'Página Inicial', window.location.pathname);
+        }
+    }
+
     function renderCategories() {
-        // CORREÇÃO APLICADA AQUI
         const uniqueCategories = [...new Set(products.map(p => p.category))];
         const categoryObjects = uniqueCategories.map(cat => ({ id: cat, name: cat.charAt(0).toUpperCase() + cat.slice(1) }));
         const categoriesData = [{ id: 'todos', name: 'Todos' }, ...categoryObjects];
@@ -210,7 +222,13 @@
         container.appendChild(grid);
     }
     
-    function showProduct(id) {
+    /**
+     * NAVEGAÇÃO: Exibe a página de detalhes de um produto e atualiza o histórico.
+     * @param {number} id - O ID do produto a ser exibido.
+     * @param {boolean} pushState - Se deve ou não adicionar um novo estado ao histórico.
+     * Padrão é true. Usamos false ao navegar pelo histórico do navegador.
+     */
+    function showProduct(id, pushState = true) {
         const product = products.find(p => p.id === id);
         if (!product) return;
         selectedProductId = id;
@@ -226,6 +244,10 @@
         selectVariation(variationsContainer.children[0], product.variations[0].name);
         document.getElementById("homePage").classList.add("hidden");
         document.getElementById("productDetail").classList.remove("hidden");
+        
+        if (pushState) {
+            history.pushState({ productId: id }, `Produto: ${product.name}`, `#product/${id}`);
+        }
     }
 
     function selectVariation(element, variationName) {
@@ -330,7 +352,28 @@
 
             loadCart();
             renderCategories();
-            renderProducts();
+            
+            // NAVEGAÇÃO: Lida com o carregamento inicial da página e o estado do histórico
+            window.onpopstate = function(event) {
+                if (event.state && event.state.productId) {
+                    showProduct(event.state.productId, false);
+                } else {
+                    goHome(false);
+                }
+            };
+
+            const urlHash = window.location.hash;
+            if (urlHash && urlHash.startsWith('#product/')) {
+                const productId = parseInt(urlHash.split('/')[1]);
+                if (products.some(p => p.id === productId)) {
+                    showProduct(productId, false);
+                    history.replaceState({ productId: productId }, '', `#product/${productId}`);
+                }
+            } else {
+                renderProducts();
+                history.replaceState({ page: 'home' }, 'Página Inicial', window.location.pathname);
+            }
+
         } catch (error) {
             console.error("Erro ao carregar os dados:", error);
             document.querySelector('.container').innerHTML = "<h1>Erro ao carregar o site. Tente novamente mais tarde.</h1>";

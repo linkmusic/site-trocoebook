@@ -55,6 +55,6 @@ collections:
                 summary: "{{fields.name}} - R$ {{fields.price}}"
                 fields:
                   - { label: "Nome da Variação", name: "name", widget: "string" }
-                  - { label: "Preço", name: "price", widget: "number" }
+                  - { label: "Preço (use ponto para decimais, ex: 19.90)", name: "price", widget: "number", value_type: "float" }
                   - { label: "Detalhes (texto curto)", name: "details", widget: "string" }
                   - { label: "Nota Importante (texto curto)", name: "important", widget: "string" }
